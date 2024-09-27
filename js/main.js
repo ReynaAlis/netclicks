@@ -1,3 +1,7 @@
+// Проверяем наличие поискового запроса в URL
+const urlParams = new URLSearchParams(window.location.search);
+const queryParam = urlParams.get('search');
+
 const cardWrapper = document.querySelector('.content-cards');
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-button');
@@ -147,6 +151,14 @@ const debounce = (func, delay) => {
 const searchFilms = debounce(() => {
     const query = searchInput.value.trim().toLowerCase();
 
+    // Проверяем, если это страница фильма, делаем редирект на главную
+    const isFilmPage = window.location.pathname.includes('film.html');
+    if (isFilmPage) {
+        // Перенаправляем на главную с запросом в URL
+        window.location.href = `/index.html?search=${encodeURIComponent(query)}`;
+        return;
+    }
+
     if (!query) {
         renderFilm(films); // Если поиск пустой, рендерим весь каталог
         return;
@@ -155,6 +167,7 @@ const searchFilms = debounce(() => {
     const results = fuse.search(query).map(result => result.item);
     renderFilm(results);
 }, 300); // Задержка 300 мс
+
 
 // Поиск при вводе текста в поле
 searchInput.addEventListener('input', searchFilms);
@@ -169,5 +182,12 @@ searchInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Изначальный рендер всех фильмов
-renderFilm(films);
+// Выполняем поиск при загрузке страницы, если есть параметр "search" в URL
+if (queryParam) {
+    searchInput.value = queryParam; // Устанавливаем значение в поле поиска
+    searchFilms(); // Выполняем поиск до того, как рендерим все фильмы
+} else {
+    // Если параметра нет, рендерим все фильмы
+    renderFilm(films);
+}
+
