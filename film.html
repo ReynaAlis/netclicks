@@ -22,6 +22,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -46,9 +48,9 @@
         <section class="search">
             <div class="container">
                 <div class="search-box">
-                    <input type="text" placeholder="Что хотите посмотреть?">
+                    <input id="search-input" type="text" placeholder="Что хотите посмотреть?">
 
-                    <button class="button" type="submit">
+                    <button id="search-button" class="button" type="submit">
                         <img src="./images/search-icon.svg" alt="search-icon">
                         <span>Найти</span>
                     </button>
@@ -144,6 +146,7 @@
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 </body>
 
 </html>

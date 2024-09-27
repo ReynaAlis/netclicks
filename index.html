@@ -22,6 +22,8 @@
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -46,9 +48,9 @@
         <section class="search">
             <div class="container">
                 <div class="search-box">
-                    <input type="text" placeholder="Что хотите посмотреть?">
+                    <input id="search-input" type="text" placeholder="Что хотите посмотреть?">
 
-                    <button class="button" type="submit">
+                    <button id="search-button" class="button" type="submit">
                         <img src="./images/search-icon.svg" alt="search-icon">
                         <span>Найти</span>
                     </button>
@@ -68,7 +70,8 @@
                                     <picture>
                                         <source srcset="./images/buddha.avif" type="image/avif">
                                         <source srcset="./images/buddha.webp" type="image/webp">
-                                        <img src="./images/buddha.jpg" alt="Постер к фильму Маленький Будда" loading="lazy">
+                                        <img src="./images/buddha.jpg" alt="Постер к фильму Маленький Будда"
+                                            loading="lazy">
                                     </picture>
                                 </div>
 
@@ -106,7 +109,8 @@
                                     <picture>
                                         <source srcset="./images/freddy.avif" type="image/avif">
                                         <source srcset="./images/freddy.webp" type="image/webp">
-                                        <img src="./images/freddy.jpg" alt="Постер к фильму Кошмар на узице Вязов" loading="lazy">
+                                        <img src="./images/freddy.jpg" alt="Постер к фильму Кошмар на узице Вязов"
+                                            loading="lazy">
                                     </picture>
                                 </div>
 
@@ -125,14 +129,15 @@
                                     <picture>
                                         <source srcset="./images/karate_kid.avif" type="image/avif">
                                         <source srcset="./images/karate_kid.webp" type="image/webp">
-                                        <img src="./images/karate_kid.jpg" alt="Постер к фильму Каратэ-пацан" loading="lazy">
+                                        <img src="./images/karate_kid.jpg" alt="Постер к фильму Каратэ-пацан"
+                                            loading="lazy">
                                     </picture>
                                 </div>
 
                                 <div class="content-cards__item--text">
                                     <h3 class="content-cards__item--title">Каратэ-пацан</h3>
                                     <span class="content-cards__item--year">2010</span>
-                                    
+
                                     <p class="content-cards__item--genre">Драма, спорт, семейный</p>
 
                                     <p class="content-cards__item--rating">7.1</p>
@@ -144,7 +149,8 @@
                                     <picture>
                                         <source srcset="./images/sea_beast.avif" type="image/avif">
                                         <source srcset="./images/sea_beast.webp" type="image/webp">
-                                        <img src="./images/sea_beast.jpg" alt="Постер к фильму Морской монстр" loading="lazy">
+                                        <img src="./images/sea_beast.jpg" alt="Постер к фильму Морской монстр"
+                                            loading="lazy">
                                     </picture>
                                 </div>
 
@@ -222,13 +228,12 @@
                             <a href="#!">Политика конфиденциальности</a>
                             <a href="#!">Обработка персональных данных</a>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
 </body>
 
 </html>
